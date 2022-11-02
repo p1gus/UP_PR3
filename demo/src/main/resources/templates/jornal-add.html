@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Добавить репортера</title>
+</head>
+<body th:align="center">
+<h1>Добавить репортера</h1>
+<form th:action="${'/jornalisti/add'}" method="post">
+    <input type="text" name="name" placeholder="Введите имя репортера"><br>
+    <input type="text" name="fam" placeholder="Введите фамилию репортера"><br>
+    <input type="number" name="kolvastat" placeholder="Введите количество статей"><br>
+    <input type="date" name="denroj"><br>
+    <input type="text" name="cena" placeholder="Введите оклад за стаью">
+  <br>
+  <button type="submit">Добавить</button>
+    <br>
+    <button>
+        <a onclick="javascript:history.back(-2); return false;">Назад</a>
+    </button>
+</form>
+
+</body>
+</html>
+<style>
+    html *{
+        font-family: Arial !important;
+    }
+    a{
+        text-decoration: none;
+    }
+    a:hover{
+        color:dimgray;
+    }
+    button{
+        font-size: 25px;
+        width: 250px;
+        height: 50px;
+        margin-top: 20px;
+        background-color: dimgray;
+        border-radius: 15px;
+    }
+    button:hover{
+        border-color: silver;
+
+    }
+    input{
+        width: 205px;
+        height: 55px;
+        margin-top: 20px;
+        background-color: dimgray;
+        border-radius: 15px;
+    }
+    textarea{
+        width: 205px;
+        height: 55px;
+        margin-top: 20px;
+        background-color: dimgray;
+        border-radius: 15px;
+    }
+</style>

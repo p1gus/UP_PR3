@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Читатели</title>
+</head>
+<body th:align="center">
+<h1>Все читатели</h1>
+
+<div th:each="ooda : ${chitateli}">
+    <h3>----------------------------------------------------------------</h3>
+    <h3 th:text="${'Имя: '+ooda.name}"></h3>
+    <h3 th:text="${'Фамилия: '+ooda.fam}"></h3>
+    <h4 th:text="${'Оклад: '+ooda.oklad}"></h4>
+    <h4 th:text="${'Количество прочитанных статей: '+ooda.kolvostat}"></h4>
+    <h4 th:text="${'Дата рождения: '+ooda.denroj}"></h4>
+    <button><a class="shadow-text" th:href=" '/chitateli/' + ${ooda.id}">Подробнее</a></button>
+</div>
+<button><a class="shadow-text" href="/chitateli/filter">Поиск</a></button>
+<br>
+<button><a class="shadow-text" href="/chitateli/add">Создать</a></button>
+<br>
+<button><a class="shadow-text" onclick="javascript:history.back(-2); return false;">Назад</a>
+</button>
+</body>
+</html>
+<style>
+    html *{
+        font-family: Arial !important;
+    }
+    a{
+        text-decoration: none;
+    }
+    a:hover{
+        color:dimgray;
+    }
+    button{
+        font-size: 25px;
+        width: 250px;
+        height: 50px;
+        margin-top: 20px;
+        background-color: dimgray;
+        border-radius: 15px;
+    }
+    button:hover{
+        border-color: silver;
+
+    }
+    input{
+        width: 205px;
+        height: 55px;
+        margin-top: 20px;
+        background-color: dimgray;
+        border-radius: 15px;
+    }
+    textarea{
+        width: 205px;
+        height: 55px;
+        margin-top: 20px;
+        background-color: dimgray;
+        border-radius: 15px;
+    }
+</style>

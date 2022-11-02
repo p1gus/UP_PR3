@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Редактирование</title>
+</head>
+<body th:align="center">
+<h1>Редактирование</h1>
+<form method="post">
+  <div th:each="el : ${chitateli}">
+    <input th:value="${el.name}" type="text" name="name" placeholder="Введите название статьи"><br>
+    <input th:value="${el.fam}" type="text" name="fam" placeholder="Введите дату выхода"><br>
+    <input th:value="${el.oklad}" type="text" name="oklad" placeholder="Введите количество часов"><br>
+    <input th:value="${el.kolvostat}" type="text" name="kolvostat" placeholder="Введите цену"><br>
+    <input th:value="${el.denroj}" type="date" name="denroj" placeholder="Введите текст статьи"><br>
+    <button type="submit">Применить</button>
+      <br>
+      <button>
+          <a onclick="javascript:history.back(-2); return false;">Назад</a>
+      </button>
+  </div>
+</form>
+</body>
+</html>
+<style>
+    html *{
+        font-family: Arial !important;
+    }
+    a{
+        text-decoration: none;
+    }
+    a:hover{
+        color:dimgray;
+    }
+    button{
+        font-size: 25px;
+        width: 250px;
+        height: 50px;
+        margin-top: 20px;
+        background-color: dimgray;
+        border-radius: 15px;
+    }
+    button:hover{
+        border-color: silver;
+
+    }
+    input{
+        width: 205px;
+        height: 55px;
+        margin-top: 20px;
+        background-color: dimgray;
+        border-radius: 15px;
+    }
+    textarea{
+        width: 205px;
+        height: 55px;
+        margin-top: 20px;
+        background-color: dimgray;
+        border-radius: 15px;
+    }
+</style>

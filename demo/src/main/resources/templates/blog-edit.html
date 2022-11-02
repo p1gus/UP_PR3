@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Редактирование</title>
+</head>
+<body th:align="center">
+<h1>Редактирование</h1>
+  <form method="post">
+    <div th:each="el : ${post}">
+    <input th:value="${el.title}" type="text" name="title" placeholder="Введите название статьи"><br>
+    <input th:value="${el.datavihoda}" type="date" name="datavihoda" placeholder="Введите дату выхода"><br>
+    <input th:value="${el.hours}" type="text" name="hours" placeholder="Введите количество часов"><br>
+    <input th:value="${el.cenastat}" type="text" name="cenastat" placeholder="Введите цену"><br>
+    <textarea th:value="${el.full_text}" type="full_text" name="full_text" placeholder="Введите текст статьи"></textarea><br>
+    <button type="submit">Применить</button>
+      <br>
+      <button>
+        <a onclick="javascript:history.back(-2); return false;">Назад</a>
+      </button>
+    </div>
+  </form>
+</body>
+</html>
+<style>
+  html *{
+    font-family: Arial !important;
+  }
+  a{
+    text-decoration: none;
+  }
+  a:hover{
+    color:dimgray;
+  }
+  button{
+    font-size: 25px;
+    width: 250px;
+    height: 50px;
+    margin-top: 20px;
+    background-color: dimgray;
+    border-radius: 15px;
+  }
+  button:hover{
+    border-color: silver;
+    box-shadow: 0px 5px 10px 0px rgba(9, 1, 5, 0.5)
+  }
+  input{
+    width: 205px;
+    height: 55px;
+    margin-top: 20px;
+    background-color: dimgray;
+    border-radius: 15px;
+  }
+  textarea{
+    width: 205px;
+    height: 55px;
+    margin-top: 20px;
+    background-color: dimgray;
+    border-radius: 15px;
+  }
+</style>
